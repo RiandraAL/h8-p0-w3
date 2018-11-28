@@ -38,47 +38,39 @@ dataHandling2(input);
  */
 
  
-function dataHandling2(input){
-  input.splice(1, 1, 'Roman Alamsyah Elsharawy');
-  input.splice(2, 1, 'Provinsi Bandar Lampung');
-  input.splice(4, 1, 'Pria', 'SMA Internasional Metro');
+var input = ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"];
+function dataHandling2(){
+input.splice(1,1,'Roman Alamsyah Elsharawy');
+input.splice(2,1,'Provinsi Bandar Lampung');
+input.splice(4,1,'Pria');
+input.splice(5,0,'SMA Internasional Metro')
 console.log(input);
 
-var hari = '';
-var tahun = '';
-var bulan = 05;
-switch(bulan){
-  case 1 : {console.log(hari+ ' '+ 'Januari'+ ' ' +tahun); break;}
-  case 2 : {console.log(hari+ ' '+ 'Februari'+ ' ' +tahun); break;}
-  case 3 : {console.log(hari+ ' '+ 'Maret'+ ' ' +tahun); break;}
-  case 4 : {console.log(hari+ ' '+ 'April'+ ' ' +tahun); break;}
-  case 5 : {console.log(hari+ ' '+ 'Mei'+ ' ' +tahun); break;}
-  case 6 : {console.log(hari+ ' '+ 'Juni'+ ' ' +tahun); break;}
-  case 7 : {console.log(hari+ ' '+ 'Juli'+ ' ' +tahun); break;}
-  case 8 : {console.log(hari+ ' '+ 'Agustus'+ ' ' +tahun); break;}
-  case 9 : {console.log(hari+ ' '+ 'September'+ ' ' +tahun); break;}
-  case 10 : {console.log(hari+ ' '+ 'Oktober'+ ' ' +tahun); break;}
-  case 11 : {console.log(hari+ ' '+ 'November'+ ' ' +tahun); break;}
-  case 12 : {console.log(hari+ ' '+ 'Desember'+ ' ' +tahun); break;}
-  default:  { console.log('Tidak terjadi apa-apa'); }
-  }
+var bulan = input[3].split('/');
 
-var tanggal = input[3];
-var tanggalSplit = tanggal.split('/');
+switch (bulan[1]){
+  case '01': {console.log('Januari'); break;}
+  case '02': {console.log('Februari'); break;}
+  case '03': {console.log('Maret'); break;}
+  case '04': {console.log('April'); break;}
+  case '05': {console.log('Mei'); break;}
+  case '06': {console.log('Juni'); break;}
+  case '07': {console.log('Juli'); break;}
+  case '08': {console.log('Agustus'); break;}
+  case '09': {console.log('September'); break;}
+  case '10': {console.log('Oktober'); break;}
+  case '11': {console.log('November'); break;}
+  case '12': {console.log('Desember'); break;}
+}
+var sortis = bulan.sort(function(a,b){return b-a;});
+console.log(sortis);
 
-var x = tanggalSplit.sort(function(a,b) {
-  return b-a;
-});
-console.log(x);
+var bulanis = input[3].split('/');
+var joinis = bulanis.join('-');
+console.log(joinis);
 
-var y = tanggal.split("/");
-var z = y.join("-")
-console.log(z);
+var namais = input[1].slice(0,15);
+console.log(namais);
+}
 
-var nama = input[1];
-var namaSlice = nama.slice(0, 15);
-console.log(namaSlice);
-} 
-
-var input = ['0001', 'Roman Alamsyah', 'Bandar Lampung', '21/05/1989', 'Membaca'];
-dataHandling2(input);
+console.log(dataHandling2());
