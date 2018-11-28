@@ -3,23 +3,26 @@ Diberikan sebuah function angkaPalindrome(angka) yang menerima satu parameter an
 */
 
 
-function angkaPalindrome(angkas){
-function angkaPalindrome1(angka){
-  var jadiString = angka.toString();
-  var tampung = '';
-  for (i = jadiString.length-1; i>=0; i--){
-    tampung = tampung + jadiString[i];
-  }
-return tampung === jadiString;
-}
-var tambah1 = angkas + 1;
-while (true){
-  if(angkaPalindrome1(tambah1)){
-return tambah1
-  }else {
-    tambah1 += 1
-  }
-}
+function angkaPalindrome(num) {
+
+    function Palindrome1(n) {
+      var atas = n.toString()
+      var bawah = []
+      for (var i = atas.length - 1; i >= 0; i--) {
+        bawah.push(atas[i])
+      }
+      bawah = bawah.join('')
+      return atas === bawah
+    }
+    var tambah1 = num + 1
+    while (true) {
+      if (Palindrome1(tambah1)) {
+        return tambah1
+      } else {
+        tambah1 += 1
+      }
+    }
+  
 }
 
 console.log(angkaPalindrome(8)); // 9
